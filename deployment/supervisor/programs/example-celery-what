@@ -1,7 +1,0 @@
-[program:example-live]
-directory=%(ENV_HOME)s/sites/project-name-live
-command=%(ENV_HOME)s/sites/project-name-live/virtualenv/bin/python manage.py celery_workers --settings=project.settings._project-name_live
-autostart=true
-autorestart=true
-stdout_logfile=%(ENV_HOME)s/supervisor/logs/stream_rates.log
-stderr_logfile=%(ENV_HOME)s/supervisor/logs/stream_rates.err
