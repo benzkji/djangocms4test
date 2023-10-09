@@ -1,0 +1,30 @@
+{% extends "base_markup.html" %}
+{% load cms_tags %}
+
+
+{# be able to DRY! #}
+{# https://stackoverflow.com/a/1483705/1029469 #}
+{# use page_url/ page_title / page_description / page_image as blocks in your templates #}
+
+
+{% block canonical_url %}{% block facebook_url %}{% block page_url %}{% spaceless %}
+    {{ request.scheme }}://{{ request.get_host }}{{ request.path }}
+{% endspaceless %}{% endblock %}{% endblock %}{% endblock %}
+
+
+{% block title_tag %}{% block facebook_title %}{% block page_title %}{% spaceless %}
+    {% page_attribute "page_title" as cms_page_title %}
+    {% page_attribute "title" as cms_title %}
+    {% page_attribute "page_title" %}
+    {% if cms_page_title == cms_title %}{# no special title tag - may it be a defined suffix? #}{% endif %}
+{% endspaceless %}{% endblock %}{% endblock %}{% endblock %}
+
+
+{% block meta_description %}{% block facebook_description %}{% block page_description %}{% spaceless %}
+    {% page_attribute "meta_description" %}
+{% endspaceless %}{% endblock %}{% endblock %}{% endblock %}
+
+
+{% block pinterest_image %}{% block facebook_image %}{% block page_image %}{% spaceless %}
+
+{% endspaceless %}{% endblock %}{% endblock %}{% endblock %}

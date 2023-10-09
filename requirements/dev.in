@@ -1,0 +1,13 @@
+-r basics.in
+
+# fabric
+pip-tools
+fab-classic
+ansible
+pip-audit
+
+
+# safety
+# flake8-respect-noqa
+# mock
+# mixer

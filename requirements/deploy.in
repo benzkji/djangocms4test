@@ -1,0 +1,8 @@
+-r basics.in
+
+# gunicorn==18.0
+# gevent==1.0.2
+# gunicorn==19.7.1
+# gevent==1.2.2
+gunicorn
+gevent

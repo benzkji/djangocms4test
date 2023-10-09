@@ -1,0 +1,14 @@
+
+# pip-compile requirements/deploy.in
+# pip-sync requirements/deploy.txt
+
+# mysql-python==1.2.5
+psycopg2-binary
+sentry-sdk
+
+django<2.3
+django-split-settings
+django-compressor
+django-htmlmin
+# Pillow==3.2.0
+# easy-thumbnails==2.3

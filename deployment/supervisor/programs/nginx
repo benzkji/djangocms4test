@@ -1,0 +1,16 @@
+
+
+[program:nginx]
+command=
+    /usr/local/nginx/sbin/nginx
+    -g "daemon off;"
+    -c %(ENV_HOME)s/nginx/conf/nginx.conf
+    -p %(ENV_HOME)s/nginx
+
+autostart=true
+autorestart=true
+
+stdout_logfile=%(ENV_HOME)s/supervisor/logs/%(program_name)s.log
+stdout_logfile_maxbytes=10MB
+stderr_logfile=%(ENV_HOME)s/supervisor/logs/%(program_name)s.err
+stderr_logfile_maxbytes=10MB

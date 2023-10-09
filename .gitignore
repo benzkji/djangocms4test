@@ -1,0 +1,97 @@
+
+# IDEs, own custom files
+.idea/
+/project/settings/local.py
+
+# user data (uploads, static files, etc)
+bundle/
+/public/
+/media/
+/static/
+# old style
+/project/public/
+/project/media/
+/project/static/
+
+# black hole
+node_modules/
+# python env
+virtualenv/
+
+# dumps, mysql conf/pw file
+*.cnf
+*.db
+*.sql
+
+# compiled, builds, cache, etc
+*.pyc
+*.egg-info
+docs/_build
+.sass-cache/
+*.sock
+*.pid
+yarn.lock
+
+
+# github default python gitignore. FTW.
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+
+# sensible stuff
+.env
+.env-temp
+.vault_pw
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+# dist/ many bower packages have this directory!
+downloads/
+eggs/
+# lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+.idea/
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+
+# Translations
+*.mo
+*.pot
+
+# logs?! nope:
+*.log
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/

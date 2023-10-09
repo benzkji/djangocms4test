@@ -1,0 +1,15 @@
+# pip-compile requirements/deploy.in
+# pip-sync requirements/deploy.txt
+
+
+# django + tools
+django<5
+django-split-settings
+django-environ
+
+# filer
+django-filer
+
+# cms
+django-cms==4.1.0.rc4
+# django-treebeard

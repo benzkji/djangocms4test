@@ -1,0 +1,6 @@
+{% load menu_tags cms_tags i18n %}
+
+{% for language in languages %}{% spaceless %}
+    <link rel="alternate" hreflang="{{ language.0 }}" href="{{ request.scheme }}://{{ request.get_host }}{% page_language_url language.0 %}"/>
+    {% endspaceless %}
+{% endfor %}

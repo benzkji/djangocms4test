@@ -1,0 +1,19 @@
+[program:project_name-live]
+
+environment=DJANGO_SETTINGS_MODULE=project.settings
+
+directory=%(ENV_HOME)s/sites/%(program_name)s
+command=
+    %(ENV_HOME)s/sites/%(program_name)s/virtualenv/bin/gunicorn
+    --bind unix:///%(ENV_HOME)s/sites/%(program_name)s.sock
+    --worker-class gevent
+    --workers 4
+    project.wsgi
+
+autostart=true
+autorestart=true
+
+stdout_logfile=%(ENV_HOME)s/supervisor/logs/%(program_name)s.log
+stdout_logfile_maxbytes=10MB
+stderr_logfile=%(ENV_HOME)s/supervisor/logs/%(program_name)s.err
+stderr_logfile_maxbytes=10MB

@@ -1,0 +1,43 @@
+
+upstream djangocms4test_stage_server {
+    server unix:/home/djangocms4test/sites/djangocms4test-stage.sock;
+}
+
+server {
+    listen 127.0.0.1:62321;
+    server_name
+        djangocms4test.stage.bnzk.ch
+        ;
+
+    # comment out or not
+    # return 301 http://djangocms4test.ch;
+
+    # protected! (or not. user/pw: test)
+    auth_basic "Access prohibited. test";
+    auth_basic_user_file /home/djangocms4test/sites/djangocms4test-stage/deployment/nginx/.htpasswd-stage;
+
+    location / {
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_redirect off;
+        # x-forwarded-proto for gunicorn, x-forwarded-protocol for Django!
+        # $scheme is http, as the front nginx is doing ssl termination!
+        proxy_set_header X-Forwarded-Proto $scheme;
+        if (!-f $request_filename) {
+            proxy_pass      http://djangocms4test_stage_server ;
+            break;
+        }
+    }
+
+    error_log logs/djangocms4test-stage-error.log;
+    access_log logs/djangocms4test-stage-access.log;
+
+    location /static/ {
+        # expires 3M;
+        alias   /home/djangocms4test/sites/djangocms4test-stage/public/static/;
+    }
+    location /media/ {
+        # expires 3M;
+        alias   /home/djangocms4test/sites/djangocms4test-stage/public/media/;
+    }
+}

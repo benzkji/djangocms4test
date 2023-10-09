@@ -1,0 +1,15 @@
+
+# db
+sudo nine-manage-databases database create nmd_domain_com
+
+# prepare for emporer and vasals
+mkdir uwsgi.d
+
+# create vhost
+sudo nine-manage-vhosts virtual-host create --template uwsgi domain.com
+
+# create cert (optional)
+sudo nine-manage-vhosts certificate create --virtual-host=domain.com
+
+# adapt vhost (optional)
+sudo nine-manage-vhosts virtual-host update --template uwsgi-letsencrypt domain.com

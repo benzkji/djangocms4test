@@ -1,0 +1,20 @@
+
+
+[program:project_name-stage]
+
+environment=
+    PROJECT_ENV=stage,
+    PROJECT_NAME=project_name,
+    PROJECT_SITE=project_name,
+    WORKER_CLASS=gevent,
+    WORKER_AMOUNT=4
+
+command=%(ENV_HOME)s/sites/project_name-stage/deployment/supervisor/gunicorn.sh
+
+autostart=true
+autorestart=true
+
+stdout_logfile=%(ENV_HOME)s/supervisor/logs/%(program_name)s.log
+stdout_logfile_maxbytes=10MB
+stderr_logfile=%(ENV_HOME)s/supervisor/logs/%(program_name)s.err
+stderr_logfile_maxbytes=10MB

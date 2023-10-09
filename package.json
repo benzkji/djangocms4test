@@ -1,0 +1,44 @@
+{
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.1.1",
+    "mini-css-extract-plugin": "^1.3.9",
+    "eslint": "^8.49.0",
+    "eslint-config-prettier": "^9.0.0",
+    "prettier": "^3.0.3",
+    "sass": "^1.34.0",
+    "sass-loader": "^11.0.1",
+    "webpack": "^5.24.4",
+    "webpack-cli": "^4.5.0",
+    "webpack-livereload-plugin": "^3.0.1"
+  },
+  "dependencies": {
+    "stimulus": "^2.0.0",
+    "normalize-css": "^2.3.1",
+    "slick-carousel": "^1.8.1"
+  },
+  "scripts": {
+    "watch": "webpack --watch --mode=development --progress",
+    "build": "webpack build --mode=production --progress",
+    "init-dev": "pip install -U pip setuptools pip-tools fab-classic; pip install -e 'git+https://github.com/benzkji/fabric-bnzk.git@main#egg=fabric-bnzk'",
+    "pip-init-upgrade": "pip install -U pip setuptools pip-tools"
+  },
+  "browserslist": "> 0.1%, not dead",
+  "prettier": {"editorconfig": true },
+  "eslint": {
+    "env": {
+      "browser": true
+    },
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+      "sourceType": "module",
+      "requireConfigFile": false
+    },
+    "extends": [
+      "eslint:recommended",
+      "prettier"
+    ]
+  }
+}
