@@ -4,8 +4,6 @@
 #
 #    pip-compile requirements/dev.in
 #
--e git+https://github.com/benzkji/fabric-bnzk.git@main#egg=fabric-bnzk
-    # via -r requirements/dev.in
 ansible==8.4.0
     # via -r requirements/dev.in
 ansible-core==2.15.4
@@ -49,19 +47,24 @@ django==4.2.5
     #   django-sekizai
     #   django-treebeard
     #   djangocms-admin-style
+    #   djangocms-versioning
     #   easy-thumbnails
 django-classy-tags==4.1.0
     # via
     #   django-cms
     #   django-sekizai
 django-cms==4.1.0rc4
-    # via -r requirements/basics.in
+    # via
+    #   -r requirements/basics.in
+    #   djangocms-versioning
 django-environ==0.11.2
     # via -r requirements/basics.in
 django-filer==3.0.6
     # via -r requirements/basics.in
 django-formtools==2.4.1
     # via django-cms
+django-fsm==2.8.1
+    # via djangocms-versioning
 django-polymorphic==3.1.0
     # via django-filer
 django-sekizai==4.1.0
@@ -72,16 +75,14 @@ django-treebeard==4.7
     # via django-cms
 djangocms-admin-style==3.2.6
     # via django-cms
+djangocms-versioning==2.0.0rc1
+    # via -r requirements/basics.in
 easy-thumbnails[svg]==2.8.5
     # via django-filer
 fab-classic==1.19.2
-    # via
-    #   -r requirements/dev.in
-    #   fabric-bnzk
+    # via -r requirements/dev.in
 filelock==3.12.4
     # via cachecontrol
-flake8==6.1.0
-    # via -r requirements/dev.in
 html5lib==1.1
     # via pip-audit
 idna==3.4
@@ -100,8 +101,6 @@ markdown-it-py==3.0.0
     # via rich
 markupsafe==2.1.3
     # via jinja2
-mccabe==0.7.0
-    # via flake8
 mdurl==0.1.2
     # via markdown-it-py
 msgpack==1.0.5
@@ -131,12 +130,8 @@ pip-tools==7.3.0
     # via -r requirements/dev.in
 py-serializable==0.11.1
     # via cyclonedx-python-lib
-pycodestyle==2.11.0
-    # via flake8
 pycparser==2.21
     # via cffi
-pyflakes==3.1.0
-    # via flake8
 pygments==2.16.1
     # via rich
 pyparsing==3.1.1

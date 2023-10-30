@@ -12,4 +12,5 @@ django-filer
 
 # cms
 django-cms==4.1.0.rc4
+djangocms-versioning
 # django-treebeard

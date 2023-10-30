@@ -6,6 +6,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "djangocms4test",
+    "djangocms_versioning",
     "filer",
     "easy_thumbnails",
     "cms",
