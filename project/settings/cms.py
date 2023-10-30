@@ -1,6 +1,6 @@
 from .base import gettext
 
-
+CMS_TOOLBAR_URL__ENABLE = 'edit'
 # just in case...
 DJANGOCMS_MISC_UNTRANSLATED_PLACEHOLDERS = False
 CMS_CONFIRM_VERSION4 = True
